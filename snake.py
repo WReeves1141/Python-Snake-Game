@@ -24,8 +24,11 @@ class Snake:
     # ====================================================================== #
     def create_snake(self):
         for position in STARTING_POSITIONS:
-            new_segment = Turtle("square")
-            new_segment.color("green")
+            new_segment = Turtle("circle")
+            if position == STARTING_POSITIONS[1]:
+                new_segment.color("orange")
+            else:
+                new_segment.color("green")
             new_segment.penup()
             new_segment.goto(position)
             self.segments.append(new_segment)
@@ -34,7 +37,7 @@ class Snake:
     #   Initializes a new snake segment.
     # ====================================================================== #
     def add_segment(self, position):
-        new_segment = Turtle("square")
+        new_segment = Turtle("circle")
         new_segment.color("green")
         new_segment.penup()
         new_segment.goto(position)
